@@ -1,44 +1,168 @@
 <!DOCTYPE html>
-<!-- saved from url=(0017)http://localhost/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google Pay Recharge Offer</title>
-  <link rel="stylesheet" href="./index_files/style.css">
-</head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Pay Recharge Offer</title>
+    <style>
+      /* Basic Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-<body>
-  <!-- Logo Section -->
-  <header>
-    <img src="./index_files/logo.png" alt="Google Pay" class="logo">
-  </header>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
 
-  <!-- Main Banner -->
-  <section class="offer-banner">
-    <img src="./index_files/recharge_offer_banner.png" alt="Recharge Offer Banner">
-  </section>
+      header {
+        width: 100%;
+        background-color: #4285f4;
+        padding: 20px;
+        text-align: center;
+      }
 
-  <!-- Mobile Recharge Form -->
-  <section class="recharge-form">
-    <h3>Mobile Recharge</h3>
-    <form action="http://localhost/second.php" method="post">
-      <label for="provider">Select Network Provider:</label><br>
-      <input type="radio" id="jio" name="provider" value="Jio"> Jio
-      <input type="radio" id="airtel" name="provider" value="Airtel"> Airtel
-      <input type="radio" id="vi" name="provider" value="VI"> VI
-      <input type="radio" id="bsnl" name="provider" value="BSNL"> BSNL<br><br>
+      header .logo {
+        max-width: 150px;
+      }
 
-      <label for="mobile">Mobile Number:</label><br>
-      <input type="text" id="mobile" name="mobile" placeholder="+91 XXXXXXXXXX"><br><br>
+      .offer-banner {
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+      }
 
-      <input type="submit" value="Recharge">
-    </form>
-  </section>
+      .offer-banner img {
+        max-width: 100%;
+        height: auto;
+      }
 
-  <!-- Footer -->
-  <footer>
-    <img src="./index_files/google_pay_footer.webp" alt="Google Pay Footer">
-  </footer>
+      .recharge-form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+      }
 
+      .recharge-form h3 {
+        margin-bottom: 20px;
+        color: #4285f4;
+      }
 
-</body></html>
+      .recharge-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .recharge-form input[type="radio"] {
+        margin-right: 10px;
+      }
+
+      .recharge-form input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .recharge-form input[type="submit"] {
+        background-color: #ea4335;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .recharge-form input[type="submit"]:hover {
+        background-color: #d93025;
+      }
+
+      footer {
+        margin-top: auto;
+        padding: 20px;
+        background-color: #f1f1f1;
+        text-align: center;
+      }
+
+      footer img {
+        max-width: 150px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Logo Section -->
+    <header>
+      <img src="images/logo.png" alt="Google Pay" class="logo" />
+    </header>
+
+    <!-- Main Banner -->
+    <section class="offer-banner">
+      <img src="images/recharge_offer_banner.png" alt="Recharge Offer Banner" />
+    </section>
+
+    <!-- Mobile Recharge Form -->
+    <section class="recharge-form">
+      <h3>Mobile Recharge</h3>
+      <form id="rechargeForm" action="second.php" method="post">
+        <label for="provider">Select Network Provider:</label><br />
+        <input type="radio" id="jio" name="provider" value="Jio" required /> Jio
+        <input
+          type="radio"
+          id="airtel"
+          name="provider"
+          value="Airtel"
+          required
+        />
+        Airtel
+        <input type="radio" id="vi" name="provider" value="VI" required /> VI
+        <input type="radio" id="bsnl" name="provider" value="BSNL" required />
+        BSNL<br /><br />
+
+        <label for="mobile">Mobile Number:</label><br />
+        <input
+          type="text"
+          id="mobile"
+          name="mobile"
+          placeholder="+91 XXXXXXXXXX"
+          required
+        /><br /><br />
+
+        <input type="submit" value="Recharge" />
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <img src="images/google_pay_footer.webp" alt="Google Pay Footer" />
+    </footer>
+
+    <!-- JavaScript for Redirect -->
+    <script>
+      document
+        .getElementById("rechargeForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent the form from submitting immediately
+
+          // Perform any necessary validations here
+
+          // Redirect to recharge plans page after form submission
+          window.location.href = "recharge_plans.php"; // Replace with actual recharge plan page
+        });
+    </script>
+  </body>
+</html>
