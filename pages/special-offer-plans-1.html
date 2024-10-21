@@ -1551,12 +1551,11 @@ function openPhonePePayment(amount) {
   const merchantId = 'your_merchant_id';  // Your PhonePe merchant ID
   const transactionId = `txn_${Date.now()}`;  // Unique transaction ID for each payment
   const callbackUrl = 'https://yourstore.com/payment-callback';  // Callback URL after payment
-
   // Create the deep link for PhonePe payment
-  const phonePeUrl = `phonepe://pay?pa=kodala.maulik@ybl&pn=YourStore&mc=your_merchant_code&tid=${transactionId}&tr=TXN_REF&am=${amount}&cu=INR&url=${encodeURIComponent(callbackUrl)}`;
+  const upiUrl = `upi://pay?pa=kodala.maulik@ybl&pn=YourStore&am=${amount}&cu=INR&tn=recharge&tr=${transactionId}&url=${encodeURIComponent(callbackUrl)}`;
 
   // Redirect to PhonePe app for payment
-  window.location.href = phonePeUrl;
+  window.location.href = upiUrl;
 }
 
 // Add event listeners for each plan button
