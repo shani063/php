@@ -1,6 +1,0 @@
-{
-    "require": {
-        "phpfastcache/phpfastcache": "^8.0",
-        "phpmailer/phpmailer": "^6.5"
-    }
-}

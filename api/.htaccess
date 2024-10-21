@@ -1,9 +1,0 @@
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^www\.
-RewriteRule ^(.*)$ http://localhost:3000/index.php/$1 [R=301,L]
-RewriteRule ^home?$ index.php
-RewriteRule ^address?$ address.php
-RewriteRule ^order-summary?$ order_summary.php
-RewriteRule ^payment?$ payment.php
-RewriteRule ^product-details/([^/]+)/?$ product_details.php?id=$1  [NC,L]
-RewriteRule ^thankyou?$ thankyou.php
